@@ -35,3 +35,11 @@ swagger2ts.generate(jsonUrl).then(codeResult => {
 
 
 # changelog
+## 1.0.1
+初始化版本
+
+## 1.0.2
+删除一些无用文件
+
+## 1.0.3
+优化枚举值类型
