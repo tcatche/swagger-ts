@@ -1,5 +1,7 @@
 const request = require('request')
-const generator = require('./lib/generator.js')
+const fs = require('fs')
+const path = require('path')
+const Generator = require('./lib/generator.js')
 const url = require('url')
 
 /**
@@ -21,17 +23,39 @@ function apiRequest (swaggerUrl) {
   })
 }
 
+function saveFile (apiContent, outputName) {
+  console.log(outputName)
+  if (outputName.split('.').pop() !== 'ts') {
+    console.log(`outputName 必须以 '.ts' 结尾，否则不会自动保存文件`)
+    return apiContent
+  }
+  const dirName = path.dirname(outputName)
+  fs.mkdirSync(dirName, { recursive: true }, (err) => {
+    if (err) {
+      console.error('创建文件夹失败:', dirName)
+      throw err
+    }
+  })
+  fs.writeFileSync(outputName, apiContent)
+  return apiContent
+}
+
 /**
  * 根据swagger json描述生成axios请求方法
  * @param {*} opt swagger json数据对象
  */
-function generate (swagger) {
-  if (typeof swagger === 'string' && swagger.startsWith('http')) {
-    return apiRequest(swagger).then(json => {
-      return generator.run(json)
-    })
+function generate (swagger, outputName) {
+  function runner (json) {
+    const content = new Generator().run(json)
+    if (outputName) {
+      saveFile(content, outputName)
+    }
+    return content
   }
-  return Promise.resolve(generator.run(swagger))
+  if (typeof swagger === 'string' && swagger.startsWith('http')) {
+    return apiRequest(swagger).then(runner)
+  }
+  return Promise.resolve(() => runner(swagger)).then(saveFile)
 }
 
 module.exports.generate = generate
