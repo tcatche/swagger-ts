@@ -1,0 +1,31 @@
+{
+  "name": "@tcatche/swagger-ts",
+  "version": "1.0.1",
+  "description": "Codegen from swagger to TS & Axios Functions",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:tcatche/swagger-ts.git"
+  },
+  "keywords": [
+    "swagger",
+    "ts",
+    "codegen"
+  ],
+  "author": "tcatche",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tcatche/swagger-ts/issues"
+  },
+  "homepage": "https://github.com/tcatche/swagger-ts",
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "request": "^2.88.2"
+  }
+}
