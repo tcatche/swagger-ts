@@ -1,6 +1,6 @@
 {
   "name": "@tcatche/swagger-ts",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Codegen from swagger to TS & Axios Functions",
   "main": "index.js",
   "repository": {
@@ -10,6 +10,9 @@
   "keywords": [
     "swagger",
     "ts",
+    "swagger2ts",
+    "swagger to ts",
+    "swagger-ts",
     "codegen"
   ],
   "author": "tcatche",

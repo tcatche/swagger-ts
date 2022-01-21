@@ -58,10 +58,14 @@ swagger2ts.generate(jsonUrl, '/home/works/api/result.ts').catch(console.log)
 优化枚举值类型
 
 ## 1.0.4
-优化：
+Features：
 - 增加文件自动保存的支持
 
-修复：
+Fixes：
 - 修复枚举值类型为字符串时错误
 - 去掉类型名中的空格
 - 修复重复的类型定义
+
+## 1.0.5
+Features：
+- 去掉一些无用的代码，调整一些逻辑

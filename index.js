@@ -24,7 +24,6 @@ function apiRequest (swaggerUrl) {
 }
 
 function saveFile (apiContent, outputName) {
-  console.log(outputName)
   if (outputName.split('.').pop() !== 'ts') {
     console.log(`outputName 必须以 '.ts' 结尾，否则不会自动保存文件`)
     return apiContent
