@@ -1,9 +1,9 @@
-# swagger-ts
-Swagger to axios ts Codegen
+# @tcatche/swagger-ts
+Swagger to axios ts Codegen，适配 swagger2.0 版本
 
 # Installation
 ```shell
-npm install swagger-ts --dev
+npm install @tcatche/swagger-ts --dev
 ```
 # Generate
 ## Using JSON file
@@ -69,3 +69,7 @@ Fixes：
 ## 1.0.5
 Features：
 - 去掉一些无用的代码，调整一些逻辑
+
+## 1.0.6
+Fixes：
+- 修改文档中的错误
